@@ -50,6 +50,32 @@
                         <div class="panel-body">
                             <input id="order_id" type="hidden" name="order_id" value="{order/id}"/>
                             <input id="id_user" type="hidden" name="id_user" value="{order/id_user}"/>
+
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <label class="btn btn-default" style="width: 50%; margin: 0;">
+                                        <xsl:if test="order/is_peds = 0">
+                                            <xsl:attribute name="class">btn btn-default active</xsl:attribute>
+                                        </xsl:if>На автомобиле
+                                        <input type="radio" name="is_peds" value="0" onchange="$('input[name=is_peds]').parent().removeClass('active'); $('input[name=is_peds]:checked').parent().addClass('active');calc_route(1);">
+                                            <xsl:if test="order/is_peds = 0 or not(order/is_peds)">
+                                                <xsl:attribute name="checked"/>
+                                            </xsl:if>
+                                        </input>
+                                    </label>
+                                    <label class="btn btn-default" style="width: 50%; margin: 0;">
+                                        <xsl:if test="order/is_peds = 1">
+                                            <xsl:attribute name="class">btn btn-default active</xsl:attribute>
+                                        </xsl:if>Пешая доставка
+                                        <input type="radio" name="is_peds" value="1" onchange="$('input[name=is_peds]').parent().removeClass('active'); $('input[name=is_peds]:checked').parent().addClass('active');calc_route(1);">
+                                            <xsl:if test="order/is_peds = 1">
+                                                <xsl:attribute name="checked"/>
+                                            </xsl:if>
+                                        </input>
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="input-group" style="width:100%">
                                 <div class="form-control" style="width: 30%;">
                                     <span class="order-add-title text-info">Дата заказа</span>
@@ -210,20 +236,6 @@
                         <div class="map-info">
                             <span id="ShortInfo"/>
                             <div class="map-full-info" id="viewContainer"/>
-                        </div>
-                        <div class="map-btns">
-                            <div class="funkyradio">
-                                <div class="funkyradio-info">
-                                    <input type="checkbox" id="is_peds" name="is_peds" value="1" onchange="calc_route(1)">
-                                        <xsl:if test="order/is_peds = 1">
-                                            <xsl:attribute name="checked"/>
-                                        </xsl:if>
-                                    </input>
-                                    <label for="is_peds" style="margin: 0;border: 0;">
-                                        <span>Пешая доставка</span>
-                                    </label>
-                                </div>
-                            </div>
                         </div>
                         <div id="map" style="width: 100%; min-height: 500px"/>
                     </div>

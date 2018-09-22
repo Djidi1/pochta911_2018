@@ -318,7 +318,7 @@ function calc_route(recalc_cost, dest_point) {
                             : fixprice_inside;
 
                         // Если установлен режим пешехода, то ставим стандартную цену для пешеходов
-                        if ($('#is_peds').prop('checked')) {
+                        if ($("input[name='is_peds']:checked").val() == 1) {
                             cost_in_spb = peds_price;
                         }
 
