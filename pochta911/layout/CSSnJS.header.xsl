@@ -3,7 +3,7 @@
     <xsl:template name="css_js_header">
         <link rel="stylesheet" href="/pochta911/css/camera.css"/>
         <link rel="stylesheet" href="/pochta911/css/select2.css?v4.0.3"/>
-        <link rel="stylesheet" href="/pochta911/css/style.css?v2.84"/>
+        <link rel="stylesheet" href="/pochta911/css/style.css?v2.85"/>
         <link rel="stylesheet" href="/pochta911/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="/pochta911/css/print.css" media="Print"/>
         <link rel="stylesheet" href="/pochta911/css/bootstrap.min.css"/>
@@ -30,7 +30,7 @@
             <script src="/pochta911/js/bootstrap-notify.min.js"/>
             <script src="/pochta911/js/camera.min.js"/>
             <script src="/pochta911/js/ready.js?v3.0.6"/>
-            <script src="/pochta911/js/common.js?v3.0.14"/>
+            <script src="/pochta911/js/common.js?v3.0.15"/>
             <script src="/pochta911/js/script.js?v3.0.6"/>
             <xsl:if test="//page[@name='pages']">
                 <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"/>
@@ -42,7 +42,7 @@
                 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAnDrB-qO4i5uCua-4krGQsloWYJBRtgNU&libraries=places"></script>
                     ]]>
                 </xsl:text>
-            <script src="/pochta911/js/gmap.js?v3.0.9"/>
+            <script src="/pochta911/js/gmap.js?v3.0.10"/>
             <script>
                 $(function(){
                     if ($('#edit_content').length){CKEDITOR.replace( 'edit_content');}

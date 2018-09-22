@@ -328,7 +328,9 @@ function updUserStores(obj){
         }
 
         $('SELECT.pay_type').val(data.pay_type);
+        $('#user_peds_price').val(data.peds_price);
         $('#user_fix_price').val(data.fixprice);
+        $('#user_max_price').val(data.maxprice);
         $('.js-store_address').html(data.opts).change();
     });
 }

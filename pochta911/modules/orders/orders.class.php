@@ -196,11 +196,12 @@ class ordersModel extends module_model {
         return $this->get_assoc_array($sql);
     }
     public function getUserParams($uid) {
-        $sql = "SELECT pay_type, fixprice_inside, maxprice_inside FROM users u WHERE u.id = $uid";
+        $sql = "SELECT pay_type, fixprice_inside, maxprice_inside, peds_price FROM users u WHERE u.id = $uid";
         $this->query($sql);
         $result = $this->fetchRowA ();
         return array(
             'pay_type' => $result['pay_type'],
+            'peds_price' => $result['peds_price'],
             'fixprice' => $result['fixprice_inside'],
             'maxprice' => $result['maxprice_inside']
         );
@@ -354,6 +355,7 @@ class ordersModel extends module_model {
 					   o.from_fio,
 					   o.from_phone,
 					   o.from_comment,
+					   o.is_peds,
 					   u.name,
 					   u.title,
 					   u.phone,
@@ -562,10 +564,10 @@ class ordersModel extends module_model {
 	public function orderInsert($id_user, $params) {
 		$sql = "
 		INSERT INTO orders (id_user, ready, target, `date`, comment, id_address, address_new, dk,
-		`from`,from_coord,from_appart,from_fio,from_phone,from_comment)
+		`from`,from_coord,from_appart,from_fio,from_phone,from_comment, is_peds)
 		VALUES ($id_user,'".$params['ready']."','".$params['target']."','".$this->dmy_to_mydate($params['date'])."','".$params['order_comment']."','".$params['store_id']."','".$params['store_new']."',NOW(),
 		'".$params['from'][0]."','".$params['from_coord'][0]."','".$params['from_appart'][0]."',
-		'".$params['from_fio'][0]."','".$params['from_phone'][0]."','".$params['from_comment'][0]."');
+		'".$params['from_fio'][0]."','".$params['from_phone'][0]."','".$params['from_comment'][0]."','".$params['is_peds'][0]."');
 		";
 		$this->query($sql);
 
@@ -592,6 +594,7 @@ class ordersModel extends module_model {
 		`from_fio` = '".$params['from_fio'][0]."',
 		`from_phone` = '".$params['from_phone'][0]."',
 		`from_comment` = '".$params['from_comment'][0]."',
+		`is_peds` = '".$params['is_peds'][0]."',
 		`dk` = NOW()
 		WHERE id = ".$params['order_id']."
 		";
@@ -871,6 +874,7 @@ class ordersProcess extends module_process {
 			$users = $this->nModel->getUsers($uid);
             $userData = $this->nModel->getUserParams($uid);
             $user_pay_type = $userData['pay_type'];
+            $user_peds_price = $userData['peds_price'];
             $user_fix_price = $userData['fixprice'];
             $user_max_price = $userData['maxprice'];
 			$prices = $this->nModel->getPrices();
@@ -882,7 +886,7 @@ class ordersProcess extends module_process {
 			$client_title = $this->nModel->getClientTitle($uid);
 			$this->nView->viewOrderEdit ( $user_id, $order, $users, $stores, $routes, $pay_types, $statuses,
                 $car_couriers, $timer, $prices, $add_prices, $client_title, $without_menu, $is_single,
-                $user_pay_type, $user_fix_price, $user_max_price, $times, $g_price, $goods );
+                $user_pay_type, $user_peds_price, $user_fix_price, $user_max_price, $times, $g_price, $goods );
 		}
 		if ($action == 'naklad') {
             $this->Vals->setVals(array('without_menu' => 1));
@@ -916,6 +920,9 @@ class ordersProcess extends module_process {
 			$params['ready'] = $this->Vals->getVal ( 'ready', 'POST', 'string' );
 			$params['target'] = $this->Vals->getVal ( 'target', 'POST', 'string' );
 			$params['order_comment'] = $this->Vals->getVal ( 'order_comment', 'POST', 'string' );
+
+			$params['is_peds'] = $this->Vals->getVal ( 'is_peds', 'POST', 'integer' );
+            $params['is_peds'] = ($params['is_peds'] > 0) ? $params['is_peds'] : '0';
 
             $user_name = $this->Vals->getVal('user_name', 'POST', 'string');
             $user_phone = $this->Vals->getVal('user_phone', 'POST', 'string');
@@ -1614,13 +1621,14 @@ class ordersView extends module_View {
 	public function viewOrderEdit($user_id, $order, $users, $stores, $routes, $pay_types,
                                   $statuses, $car_couriers, $timer, $prices, $add_prices,
                                   $client_title, $without_menu, $is_single, $user_pay_type,
-                                  $user_fix_price, $user_max_price, $times, $g_price, $goods) {
+                                  $user_peds_price, $user_fix_price, $user_max_price, $times, $g_price, $goods) {
 		$this->pXSL [] = RIVC_ROOT . 'layout/orders/order.edit.xsl';
         $Container = $this->newContainer('order');
         $this->addAttr('user_id', $user_id, $Container);
         $this->addAttr('today', date('d.m.Y'), $Container);
         $this->addAttr('time_now', time(), $Container);
         $this->addAttr('user_pay_type', $user_pay_type, $Container);
+        $this->addAttr('user_peds_price', $user_peds_price, $Container);
         $this->addAttr('user_fix_price', $user_fix_price, $Container);
         $this->addAttr('user_max_price', $user_max_price, $Container);
 //        $this->addAttr('time_now_five', $time_now_five_h . ":" . $this->roundUpToAny(date('i')), $Container);

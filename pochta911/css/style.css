@@ -219,6 +219,17 @@ div.map-container {
     color: #000;
     z-index: 1;
 }
+.map-btns {
+    display: block;
+    position: absolute;
+    right: 17px;
+    top: 90px;
+    background: #fff;
+    padding: 0 10px 0 0;
+    text-align: left;
+    color: #000;
+    z-index: 1;
+}
 .map-full-info {
     display: none;
     position: absolute;

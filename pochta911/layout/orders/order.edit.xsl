@@ -211,6 +211,20 @@
                             <span id="ShortInfo"/>
                             <div class="map-full-info" id="viewContainer"/>
                         </div>
+                        <div class="map-btns">
+                            <div class="funkyradio">
+                                <div class="funkyradio-info">
+                                    <input type="checkbox" id="is_peds" name="is_peds" value="1" onchange="calc_route(1)">
+                                        <xsl:if test="order/is_peds = 1">
+                                            <xsl:attribute name="checked"/>
+                                        </xsl:if>
+                                    </input>
+                                    <label for="is_peds" style="margin: 0;border: 0;">
+                                        <span>Пешая доставка</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div id="map" style="width: 100%; min-height: 500px"/>
                     </div>
                     <div class="alert alert-info">
@@ -234,6 +248,7 @@
                     <input id="{name()}_to" type="hidden" value="{to}"/>
                     <input id="{name()}_period" type="hidden" value="{period}"/>
                 </xsl:for-each>
+                <input id="user_peds_price" type="hidden" value="{//@user_peds_price}"/>
                 <input id="user_fix_price" type="hidden" value="{//@user_fix_price}"/>
                 <input id="user_max_price" type="hidden" value="{//@user_max_price}"/>
             </div>
@@ -242,15 +257,18 @@
         <input id="time_edited" type="hidden" value="0"/>
         <input id="order_id" type="hidden" value="{order/id}"/>
         <script>
-            $('FORM').on('keyup keypress', function(e) {
-            var keyCode = e.keyCode || e.which;
-            if (keyCode === 13) { e.preventDefault(); return false; }
+            $('FORM').on('keyup keypress', function (e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
             });
-            $('input, select').on('change', function() {
-            $('#order_edited').val(1);
+            $('input, select').on('change', function () {
+                $('#order_edited').val(1);
             });
-            $('select.to_time_ready, select.to_time_ready_end, select.to_time, select.to_time_end, select.to_time_target').on('change', function() {
-            $('#time_edited').val(1);
+            $('select.to_time_ready, select.to_time_ready_end, select.to_time, select.to_time_end, select.to_time_target').on('change', function () {
+                $('#time_edited').val(1);
             });
         </script>
     </xsl:template>

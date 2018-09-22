@@ -310,11 +310,17 @@ function calc_route(recalc_cost, dest_point) {
                         // Если к определенному времени, то прибавляем стоимость точного времени.
                         var cost_target = $('.target').prop('checked') ? $('#km_target').val() : 0;
                         // Если установлена фиксированная стоимость по городу, то ставим ее вместо расчетной
+                        var peds_price = $('#km_peds').val();
                         var fixprice_inside = $('#user_fix_price').val();
                         var maxprice_inside = $('#user_max_price').val();
                         var cost_in_spb = (fixprice_inside == 0 || typeof fixprice_inside == 'undefined')
                             ? (parseFloat(cost_km) + parseFloat(cost_Neva))
                             : fixprice_inside;
+
+                        // Если установлен режим пешехода, то ставим стандартную цену для пешеходов
+                        if ($('#is_peds').prop('checked')) {
+                            cost_in_spb = peds_price;
+                        }
 
                         if (parseFloat(cost_in_spb) > parseFloat(maxprice_inside) && parseFloat(maxprice_inside) != 0) {
                             cost_in_spb = maxprice_inside;

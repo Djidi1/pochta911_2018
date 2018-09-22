@@ -579,6 +579,9 @@ SELECT
             if ($row['type'] == 'target') {
                 $items ['km_target'] = $row['cost_route'];
             }
+            if ($row['type'] == 'peds') {
+                $items ['km_peds'] = $row['cost_route'];
+            }
         }
         return $items;
     }
@@ -635,7 +638,7 @@ SELECT
 		return $items;
 	}
 
-    public function saveRoutesPrices($km_from,$km_to,$km_cost,$km_neva,$km_kad,$km_geozone,$km_vsevol,$km_target,$user_id){
+    public function saveRoutesPrices($km_from,$km_to,$km_cost,$km_neva,$km_kad,$km_geozone,$km_vsevol,$km_target,$km_peds,$user_id){
         if (is_array($km_from)) {
             $sql = 'TRUNCATE TABLE routes_price';
             $this->query ( $sql );
@@ -658,6 +661,8 @@ SELECT
         $sql = " UPDATE routes_add_price SET cost_route = '$km_vsevol' WHERE type = 'vsevol';";
         $this->query ( $sql );
         $sql = " UPDATE routes_add_price SET cost_route = '$km_target' WHERE type = 'target';";
+        $this->query ( $sql );
+        $sql = " UPDATE routes_add_price SET cost_route = '$km_peds' WHERE type = 'peds';";
         $this->query ( $sql );
     }
     public function saveTimeCheckList($params){
@@ -1268,7 +1273,8 @@ class adminProcess extends module_process {
                 $km_geozone = $this->Vals->getVal ( 'km_geozone', 'POST', 'string' );
                 $km_vsevol = $this->Vals->getVal ( 'km_vsevol', 'POST', 'string' );
                 $km_target = $this->Vals->getVal ( 'km_target', 'POST', 'string' );
-                $this->nModel->saveRoutesPrices($km_from,$km_to,$km_cost,$km_neva,$km_kad,$km_geozone,$km_vsevol,$km_target,$user_id);
+                $km_peds = $this->Vals->getVal ( 'km_peds', 'POST', 'string' );
+                $this->nModel->saveRoutesPrices($km_from,$km_to,$km_cost,$km_neva,$km_kad,$km_geozone,$km_vsevol,$km_target,$km_peds,$user_id);
             }
 		    $prices = $this->nModel->getRoutesPrices();
 		    $add_prices = $this->nModel->getRoutesAddPrices();

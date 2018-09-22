@@ -27,6 +27,10 @@
 						<th>Прибавление к стоимости за "к точному времени"</th>
 						<td><input name="km_target" class="form-control" type="number" value="{prices/add_item/km_target}"/></td>
 					</tr>
+					<tr>
+						<th>Стоимость пешей доставки по СПб</th>
+						<td><input name="km_peds" class="form-control" type="number" value="{prices/add_item/km_peds}"/></td>
+					</tr>
 				</tbody>
 				</table>
 				<table class="table table-hover prices">
