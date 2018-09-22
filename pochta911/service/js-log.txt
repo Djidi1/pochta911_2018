@@ -1,0 +1,106 @@
+
+ OK: 01-04-2018 15:23:17 null
+ OK: 01-04-2018 15:23:17 null
+ OK: 01-04-2018 15:24:52
+ json=%7B%22origin_point%22%3A%22%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C+%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82+%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B0%D0%BD%D0%BE%D0%B2%2C+24%22%2C%22destination_point_location%22%3A%7B%22lat%22%3A60.0369991%2C%22lng%22%3A30.42372260000002%7D%2C%22way_points%22%3A%5B%5D%7D
+
+
+ OK: 01-04-2018 15:25:30
+ json={"origin_point":"Санкт-Петербург, проспект Ветеранов, 24","destination_point_location":{"lat":60.0369991,"lng":30.42372260000002},"way_points":[]}
+
+
+ OK: 09-05-2018 16:38:52
+ json={"origin_point":"Санкт-Петербург, проспект Ветеранов, 24","destination_point_location":{"lat":null,"lng":null},"way_points":[],"body":{"id":"orders","user_name":"admin","group_id":"1","user_id":"3"}}
+
+
+ OK: 09-05-2018 16:45:14
+ json={"origin_point":"Санкт-Петербург, проспект Ветеранов, 24","destination_point_location":{"lat":null,"lng":null},"way_points":[],"body":{"id":"orders","user_name":"admin","group_id":"1","user_id":"3"}}
+
+
+ OK: 09-05-2018 16:45:47
+ json={"origin_point":"Санкт-Петербург, проспект Ветеранов, 24","destination_point_location":{"lat":null,"lng":null},"way_points":[],"body":{"id":"orders","user_name":"admin","group_id":"1","user_id":"3"}}
+
+
+ OK: 29-08-2018 15:52:23
+ json={"origin_point":"Санкт-Петербург, ул Савушкина, д 19","destination_point_location":{"lat":59.9416933,"lng":30.409631499999932},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Антон","group_id":"1","user_id":"110"}}
+
+
+ OK: 03-09-2018 08:43:24
+ json={"origin_point":"Санкт-Петербург, пр-кт Науки, д 17 к 2","destination_point_location":{"lat":59.9598816,"lng":30.219617800000037},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"19 ТОРТОВ","group_id":"2","user_id":"1327"}}
+
+
+ OK: 06-09-2018 08:11:55
+ json={"origin_point":{"lat":59.9931619,"lng":30.27238299999999},"destination_point_location":"Ленинградская обл., Ленинградская обл, Ломоносовский р-н, тер. СНТ Трансмаш, ул Гривская, д 159","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Артем","group_id":"4","user_id":"191"}}
+
+
+ OK: 10-09-2018 10:11:51
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":"Ленинградская обл., Заречная улица, 19к1","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:04
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":"Ленинградская обл., Заречная улица, 19к1","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:07
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":"Ленинградская обл., Заречная улица, 19к1","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:12
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":"Ленинградская обл., Заречная улица, 19к1","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:46
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":{"lat":60.0717729,"lng":30.321809799999983},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:57
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":{"lat":60.0717729,"lng":30.321809799999983},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:57
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":{"lat":60.0717729,"lng":30.321809799999983},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:12:59
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":{"lat":60.0717729,"lng":30.321809799999983},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 10-09-2018 10:15:10
+ json={"origin_point":"Санкт-Петербург, Пулковское шоссе 24/2","destination_point_location":{"lat":60.0717729,"lng":30.321809799999983},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Максим","group_id":"2","user_id":"148"}}
+
+
+ OK: 13-09-2018 13:02:13
+ json={"origin_point":"Санкт-Петербург, Лиговский пр-кт, д 65","destination_point_location":{"lat":60.0317965,"lng":30.42901310000002},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Ольга","group_id":"2","user_id":"1163"}}
+
+
+ OK: 17-09-2018 10:39:35
+ json={"origin_point":"Ленинградская обл., пр-кт Луначарского, д 13 к 1","destination_point_location":"Ленинградская обл., Рижский пр-кт, д 26","way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Евгения Катрич","group_id":"2","user_id":"1366"}}
+
+
+ OK: 18-09-2018 11:17:33
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Юрий","group_id":"2","user_id":"1308"}}
+
+
+ OK: 18-09-2018 11:20:33
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Юрий","group_id":"2","user_id":"1308"}}
+
+
+ OK: 18-09-2018 11:20:45
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Юрий","group_id":"2","user_id":"1308"}}
+
+
+ OK: 18-09-2018 11:20:53
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Юрий","group_id":"2","user_id":"1308"}}
+
+
+ OK: 18-09-2018 11:20:57
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Косарев Кирилл","group_id":"1","user_id":"96"}}
+
+
+ OK: 18-09-2018 11:20:57
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Косарев Кирилл","group_id":"1","user_id":"96"}}
+
+
+ OK: 18-09-2018 11:21:02
+ json={"origin_point":{"lat":29.532212,"lng":106.51364699999999},"destination_point_location":{"lat":59.897442,"lng":30.339072699999974},"way_points":[],"body":{"style":"background: transparent","class":"tm-isblog","id":"orders","user_name":"Юрий","group_id":"2","user_id":"1308"}}
+

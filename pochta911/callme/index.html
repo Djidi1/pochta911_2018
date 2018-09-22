@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Callme 1.9.5: пример</title>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<style>body { padding: 0 20% 50px; font-size: 13px; font-family: "PT Sans", Arial; }
+#footer { position: fixed; left: 0; bottom: 0; padding: 10px; background: #f9f9f9; width: 100%; }
+#footer, #footer * { color: #aaa; }
+dir { background:#ffe; padding: 3px 15px; border: 1px solid #FBFAE6; }
+#template_preview {
+	float: right;
+	border-radius: 5px;
+}
+.clear {
+	display: block;
+	clear: both;
+}
+</style>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+<script type="text/javascript" src="/callme/js/jquery.js"></script>
+<script type="text/javascript" src="/callme/js/callme.js"></script>
+
+</head>
+<body>
+<h1>Тестируем CallMe 1.9.5</h1>
+
+<p>Давайте посмотрим, как работает CallMe. Нажмите на любую из ссылок ниже. <a href="#" class="callme_viewform">Кликайте на любую ссылку</a>, чтобы показать форму заказа. <a href="#" class="callme_viewform">Вообще на любую</a>. <a href="#" class="callme_viewform">Кликайте</a> на любую из них повторно, чтобы форма скрылась.</p>
+
+<p>Все очень просто: любому объекту, который должен по клику показывать или скрывать форму, добавляйте аргумент:</p>
+
+<dir>class="callme_viewform"</dir>
+
+<img src="img/default.jpg" id="template_preview">
+
+<h2>Варианты темплейтов</h2>
+
+В комплекте 6 различных скинов, которые меняются при помощи CSS. Чтобы выбрать другой скин, меняйте переменную cme_template.
+<ul>
+	<li><a href="img/apple.jpg" class="template_preview">apple</a> (в стиле Apple)
+	<li><a href="img/default.jpg" class="template_preview">default</a> (по умолчанию, самый крутой)
+	<li><a href="img/blackred.jpg" class="template_preview">blackred</a> (красно-чёрный)
+	<li><a href="img/vk.jpg" class="template_preview">vk</a> (ВКонтакте)
+	<li><a href="img/fb.jpg" class="template_preview">fb</a> (Facebook)
+	<li><a href="img/hkitty.jpg" class="template_preview">hkitty</a> (Hello Kitty)
+</ul>
+
+<script type="text/javascript">
+	jQuery( '.template_preview' ).click(function() {
+		jQuery('#template_preview').attr('src', jQuery(this).attr( 'href' ));
+		return false;
+	});4
+</script>
+<div class="clear"></div>
+
+<h2>Как добавлять поля в форму</h2>
+
+<p>Все настройки указываются в файле <b>/callme/js/config.js</b>. Чтобы изменить поля, которые появляются в форме, укажите их названия в переменной <b>cme_fields</b> через запятую. Для того, чтобы поле было не просто текстовым, а <b>textarea</b>, перед его именем добавьте минус.
+
+<h2>Все настройки Callme</h2>
+
+<dir>// отображать ли снопку вызова скрипта справа<br>
+var <b>cme_bt</b> = 1; <br><br>
+
+// укажите через запятую названия полей<br>
+// textarea - ставьте перед названием минус (-)<br>
+// select - ставьте перед названием "!" и разделяйте варианты для выбора таким же символом<br>
+var <b>cme_fields</b> = "Имя, Телефон, -Комментарий"; <br><br>
+
+// надпись на кнопке в форме<br>
+var <b>cme_title</b> = "Заказать бесплатный звонок"; <br><br>
+
+// заголовок формы<br>
+var <b>cme_button</b> = "Перезвоните мне"; <br><br>
+
+// показывать ли время звонка (0 - нет, 1 - да)<br>
+var <b>cme_calltime</b> = 1; <br><br>
+
+// если указать 1, форма будет по центру экрана<br>
+// если 0, будет появляться у места клика<br>
+var <b>cme_center</b> = 1;<br><br>
+
+// начало и конец рабочего дня в часах<br>
+// используется для времени звонка<br>
+var <b>cme_start_work</b> = 8;<br>
+var <b>cme_end_work</b> = 19;<br><br>
+
+// название папки с темплейтом (default, vk, fb, blackred, hkitty)<br>
+var <b>cme_template</b> = 'default';<br><br>
+
+// лицензия (можно купить на <a href="http://get.nazartokar.com">get.nazartokar.com</a>)<br>
+var <b>cme_license</b> = "";<br>
+var <b>cme_show_cr</b> = 1;
+</dir>
+
+<h2>Как подключить</h2>
+
+Обратите внимание: если вы обновляете более старую версию Callme, вам нужно будет удалить её код и установить заново. Это несложно, тем не менее, код придётся обновить.
+<blockquote>О том, как настраивать СМС, написано здесь: <a href="http://dedushka.org/kod/3903.html">настройка СМС в Buyme и Callme</a>.</blockquote>
+Скачивайте архив (ссылка ниже), распаковывайте его в корневую папку /callme/. Открывайте в Notepad++ или Sublime Text (<strong><span style="text-decoration: underline;">не</span></strong> блокноте) файл /callme/index.php и меняйте почту на свою.
+
+Установки производится так: перед закрывающимся тегом &lt;/head&gt; добавляем такой код:
+<dir>&lt;script src="/callme/js/callme.js"&gt;&lt;/script&gt;</dir>
+
+<h2>Условия использования</h2>
+Пользоваться можно бесплатно, оставляя копирайт. Если хотите новых версий и технической поддержки, поддерживайте и вы меня материально: <a href="http://dedushka.org/pay">здесь все реквизиты</a>. Тех, кто помогает больше всего, я указываю на <a href="http://dedushka.org/thanks">странице благодарностей</a> со ссылками на их проекты (ТИЦ=350, PR=4). Если необходимо стереть копирайт, переводите 7$ (210 рублей, 60 грн) и стирайте. Но лучше оставьте — чем больше пользователей, тем больше будет новых доработок.
+
+<h2>Помощь по установке</h2>
+Если что-то не получается, вы можете заказать у меня платную установку скрипта на любой движок, для этого пишите <a href="mailto:a@dedushka.org">на почту</a>. Если хотите ставить своими силами, но что-то не получается, читайте комментарии к постам и <a href="http://qbx.me" target="_blank">форум</a>. С вероятностью 95% ваш вопрос уже решён и ответ вы найдёте, если поищете.
+
+<div id="footer">Спасибо за использование скрипта. Не забывайте следить за новыми версиями <a href="http://dedushka.org/">на сайте</a> и <a href="http://qbx.me/">на форуме</a>. Спасибо за поддержку!</div>
+
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-23131825-1']);
+_gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})(); </script>
+
+<script type="text/javascript">new Image().src = "http://counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();</script>
+
+<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter20963398 = new Ya.Metrika({id:20963398, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/20963398" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+
+
+</body></html>

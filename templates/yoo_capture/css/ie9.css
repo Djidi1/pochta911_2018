@@ -1,0 +1,21 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * Name:			IE9
+ * Description:		Defines styles for Internet Explorer 9
+ *
+ ========================================================================== */
+
+
+.uk-dropdown-navbar { padding-top: 10px; }
+
+.wk-slideset-capture .wk-container h4 { display: none; }
+.wk-slideset-capture .wk-container span { display: none; }
+
+.tm-parallax-sequenz span:last-child {
+    font-size: 80px;
+    animation: none;
+    opacity: 1;
+}
+
+[data-uk-scrollspy*='uk-animation-'] { opacity: 1; }
